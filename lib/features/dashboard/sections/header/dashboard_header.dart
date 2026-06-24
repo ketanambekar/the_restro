@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:the_restro/constants/app_assets_constants.dart';
 import 'package:the_restro/features/dashboard/sections/header/widgets/header_buttons.dart';
 import 'package:the_restro/features/dashboard/sections/header/widgets/header_login_section.dart' show HeaderLoginSection;
 import 'package:the_restro/features/dashboard/sections/header/widgets/header_logo_title.dart';
 import 'package:the_restro/theme/app_colors.dart';
-import 'package:the_restro/theme/app_text_style.dart';
-import 'package:the_restro/wigets/app_image.dart';
 
 class DashboardHeader extends StatelessWidget implements PreferredSizeWidget {
   const DashboardHeader({super.key});
@@ -20,7 +17,7 @@ class DashboardHeader extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         backgroundColor: AppColors.white,
         flexibleSpace: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [HeaderLogoTitle(), HeaderButtons(), HeaderLoginSection()]),
       ),
     );

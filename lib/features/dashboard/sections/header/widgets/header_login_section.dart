@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:the_restro/constants/app_assets_constants.dart';
 import 'package:the_restro/wigets/app_button.dart';
@@ -20,7 +21,9 @@ class HeaderLoginSection extends StatelessWidget {
           text: 'Login',
           icon: AppAssets.login,
           onPressed: () {
-            print("Clicked");
+            if (kDebugMode) {
+              print("Clicked");
+            }
           },
         ),
       ],

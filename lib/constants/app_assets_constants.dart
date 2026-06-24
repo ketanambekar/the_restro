@@ -7,6 +7,7 @@ class AppAssets {
   static const String search = "$svgPath/search.svg";
   static const String cart = "$svgPath/cart.svg";
   static const String login = "$svgPath/login_icon.svg";
+  static const String bannerImage = "$pngPath/banner_image.png";
 
 
 }

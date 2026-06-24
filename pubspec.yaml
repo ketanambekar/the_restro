@@ -183,3 +183,8 @@ flutter:
         - asset: fonts/poppins/Poppins-BlackItalic.ttf
           weight: 900
           style: italic
+    - family: LobsterTwo
+      fonts:
+        - asset: fonts/lobster_two/LobsterTwo-BoldItalic.ttf
+          style: italic
+          weight: 800

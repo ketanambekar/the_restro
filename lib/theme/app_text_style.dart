@@ -18,4 +18,25 @@ class AppTextStyles {
      fontWeight: FontWeight.w500,
      color: AppColors.black,
   );
+
+  static const TextStyle textMedium18 = TextStyle(
+    fontSize: 18,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w500,
+    color: AppColors.black,
+  );
+
+  static const TextStyle bold67 = TextStyle(
+    fontSize: 67,
+    fontFamily: 'Rubik',
+    fontWeight: FontWeight.bold,
+    color: AppColors.black,
+  );
+
+  static const TextStyle boldItalic80 = TextStyle(
+    fontSize: 80,
+    fontFamily: 'LobsterTwo',
+    fontWeight: FontWeight.w800,
+    color: AppColors.primary,
+  );
 }

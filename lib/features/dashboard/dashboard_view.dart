@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_restro/features/dashboard/sections/banner/dashboard_banner.dart';
 import 'package:the_restro/features/dashboard/sections/header/dashboard_header.dart';
 import 'package:the_restro/theme/app_colors.dart';
 
@@ -11,8 +12,10 @@ class DashboardView extends StatelessWidget {
       backgroundColor: AppColors.white,
       appBar: DashboardHeader(),
       body: Padding(
-        padding: const EdgeInsets.only(left: 95, right: 95),
-        child: const Center(child: Text('Welcome to the Dashboard!')),
+        padding: const EdgeInsets.only(left: 95, right: 95, top: 14),
+        child: SingleChildScrollView(
+          child: Column(children: [DashboardBanner()]),
+        ),
       ),
     );
   }
