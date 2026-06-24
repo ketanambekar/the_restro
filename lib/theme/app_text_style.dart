@@ -1,12 +1,21 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
-class AppColors {
-   static const Color primary = Color(0xFFEB0029);
-   static const Color blueCharcoal = Color(0xFF263238);
-   static const Color yellow = Color(0xFFFFC107);
-   static const Color white = Color(0xFFFFFFFF);
-   static const Color black = Color(0xFF000000);
-   static const Color lightGrey = Color(0xFFE0E0E0);
+import 'app_colors.dart';
 
+class AppTextStyles {
+  AppTextStyles._();
 
+  static const TextStyle textSemiBold24 = TextStyle(
+    fontSize: 24,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
+  static const TextStyle textMedium14 = TextStyle(
+     fontSize: 14,
+     fontFamily: 'Poppins',
+     fontWeight: FontWeight.w500,
+     color: AppColors.black,
+  );
 }

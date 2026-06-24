@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+import 'package:the_restro/theme/app_colors.dart';
+import 'package:the_restro/wigets/app_image.dart';
+
+enum AppButtonType {
+  primary,
+  secondary,
+}
+
+class AppButton extends StatelessWidget {
+  final String? text;
+  final String? icon;
+  final bool iconRight;
+  final VoidCallback onPressed;
+  final AppButtonType type;
+  final double height;
+  final double borderRadius;
+
+  const AppButton({
+    super.key,
+    this.text,
+    this.icon,
+    this.iconRight = false,
+    required this.onPressed,
+    this.type = AppButtonType.primary,
+    this.height = 48,
+    this.borderRadius = 50,
+  });
+
+  bool get _isIconOnly => icon != null && text == null;
+
+  @override
+  Widget build(BuildContext context) {
+    final isPrimary = type == AppButtonType.primary;
+
+    final backgroundColor =
+    isPrimary ? AppColors.primary : Colors.transparent;
+
+    final foregroundColor =
+    isPrimary ? Colors.white : AppColors.primary;
+
+    final borderColor = AppColors.primary;
+
+    return SizedBox(
+      height: height,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: backgroundColor,
+          foregroundColor: foregroundColor,
+          side: isPrimary
+              ? BorderSide.none
+              : BorderSide(
+            color: borderColor,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+        ),
+        child: _buildChild(),
+      ),
+    );
+  }
+
+  Widget _buildChild() {
+    if (_isIconOnly) {
+      return AppImage(imagePath: icon!);
+    }
+
+    if (icon == null) {
+      return Text(text!);
+    }
+
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (!iconRight) ...[
+          AppImage(imagePath: icon!),
+          const SizedBox(width: 8),
+        ],
+        Text(text!),
+        if (iconRight) ...[
+          const SizedBox(width: 8),
+          AppImage(imagePath: icon!),
+        ],
+      ],
+    );
+  }
+}

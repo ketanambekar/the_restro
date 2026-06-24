@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:the_restro/features/dashboard/sections/header/dashboard_header.dart';
+import 'package:the_restro/theme/app_colors.dart';
+
+class DashboardView extends StatelessWidget {
+  const DashboardView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.white,
+      appBar: DashboardHeader(),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 95, right: 95),
+        child: const Center(child: Text('Welcome to the Dashboard!')),
+      ),
+    );
+  }
+}
