@@ -26,6 +26,20 @@ class AppTextStyles {
     color: AppColors.black,
   );
 
+  static const TextStyle textSemiBold17 = TextStyle(
+    fontSize: 17,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+  );
+
+  static const TextStyle textBold28 = TextStyle(
+    fontSize: 28,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.bold,
+    color: AppColors.black,
+  );
+
   static const TextStyle bold67 = TextStyle(
     fontSize: 67,
     fontFamily: 'Rubik',

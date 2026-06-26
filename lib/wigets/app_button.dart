@@ -4,7 +4,7 @@ import 'package:the_restro/wigets/app_image.dart';
 
 enum AppButtonType {
   primary,
-  secondary,
+  secondary
 }
 
 class AppButton extends StatelessWidget {
@@ -15,6 +15,7 @@ class AppButton extends StatelessWidget {
   final AppButtonType type;
   final double height;
   final double borderRadius;
+  final double? width;
 
   const AppButton({
     super.key,
@@ -25,6 +26,7 @@ class AppButton extends StatelessWidget {
     this.type = AppButtonType.primary,
     this.height = 48,
     this.borderRadius = 50,
+    this.width
   });
 
   bool get _isIconOnly => icon != null && text == null;
@@ -34,15 +36,16 @@ class AppButton extends StatelessWidget {
     final isPrimary = type == AppButtonType.primary;
 
     final backgroundColor =
-    isPrimary ? AppColors.primary : Colors.transparent;
+    isPrimary ? AppColors.primary : AppColors.yellow;
 
     final foregroundColor =
-    isPrimary ? Colors.white : AppColors.primary;
+    isPrimary ? Colors.white : AppColors.yellow;
 
-    final borderColor = AppColors.primary;
+    final borderColor = isPrimary ?  AppColors.primary: AppColors.yellow;
 
     return SizedBox(
       height: height,
+      width: width,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -65,7 +68,7 @@ class AppButton extends StatelessWidget {
 
   Widget _buildChild() {
     if (_isIconOnly) {
-      return AppImage(imagePath: icon!);
+      return AppImage(imagePath: icon!, width: 50, height: 50,);
     }
 
     if (icon == null) {
